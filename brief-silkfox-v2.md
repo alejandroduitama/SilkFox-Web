@@ -106,6 +106,11 @@ Repositorio privado: https://github.com/alejandroduitama/SilkFox-Web (rama `main
 - Todo se desactiva con `prefers-reduced-motion`.
 - Mobile first, sin scroll horizontal entre 360 y 1440 px, foco visible, `aria-label` en controles solo con icono.
 
+## 4b. Capa cinematográfica (v4)
+- **Media:** el panel 9:16 del hero reproduce un bucle de video; un **showreel** que crece con el scroll desde ese formato vertical hasta pantalla completa y entra en formato cine 2.39:1 (en pantallas horizontales); sección **Trabajos** con vista previa al pasar el cursor y visor a pantalla completa; **proceso como storyboard** horizontal (ESC. 04 · TOMA 01–05); secciones numeradas como escenas (ESC. 01–05); títulos que suben desde una máscara; viñeta, destellos de luz entre secciones; HUD con botón de **sonido ambiente** y código de tiempo del scroll; puntero que se vuelve **PLAY** sobre videos.
+- **Social:** **película principal** en formato 2.39:1 tras la franja dorada, que se acerca al entrar; galería con fotos ampliables y zoom lento; sección **Películas** con tres highlight films y vista previa.
+- Todos los archivos esperados están en `ASSETS.md`. Sin el archivo, se ve un marco de relleno.
+
 ## 5. SEO
 | Página | Title | Descripción |
 |---|---|---|
@@ -125,7 +130,7 @@ Repositorio privado: https://github.com/alejandroduitama/SilkFox-Web (rama `main
 `index.html` · `social.html` · `styles.css` · `social.css` · `main.js` · `motion.js` · `social.js` · `transition.css` · `transition.js` · `robots.txt` · `sitemap.xml` · `llms.txt` · `assets/` (logo, favicon, og.jpg, fuente Retrofunk).
 
 ## 8. Pendientes por confirmar
-1. **Fotos y videos reales** para el portafolio de Social (hoy son marcos de relleno) y, si se quiere, un clip vertical para el panel del hero de Media.
+1. **Fotos, videos y audio** listados en `ASSETS.md` (hoy son marcos de relleno).
 2. **Precio del Paquete Signature.** Hoy dice "Cobertura total".
 3. **Datos que puse yo y no vinieron del documento de oferta:** 2 rondas de revisión, entrega en 10 a 15 días hábiles, responsable de cuenta que informa al cliente, check-in a los 30 días y los "No incluye".
 4. **Plan Astucia:** si es de un solo mes o recurrente, si se mantiene el testimonio en video y la reseña a cambio del precio (hoy la página no lo menciona), y si siguen los 5 cupos por mes.

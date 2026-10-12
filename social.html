@@ -22,6 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="transition.css">
 <link rel="stylesheet" href="social.css">
+<link rel="stylesheet" href="cine.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Silk Fox Social","parentOrganization":{"@type":"Organization","name":"Silk Fox Media","url":"https://silkfox.co/"},"description":"Fotografía y video cinematográfico para bodas, aniversarios y eventos sociales en Bogotá, con cobertura completa y colorización profesional.","url":"https://silkfox.co/social.html","email":"silkfoxmedia@gmail.com","telephone":"+573212841853","address":{"@type":"PostalAddress","addressLocality":"Bogotá","addressCountry":"CO"},"sameAs":["https://instagram.com/silkfoxmedia","https://www.tiktok.com/@silkfox.media"],"areaServed":"Colombia","makesOffer":{"@type":"Offer","name":"Paquete Esencial","description":"Hasta 6 horas de cobertura de fotografía y video, galería digital en alta resolución y highlight film de 3 a 5 minutos.","priceCurrency":"COP","price":"2000000","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"COP","minPrice":"2000000"}}}
 </script>
@@ -34,6 +35,7 @@
     <a class="brand" href="#top" aria-label="Silk Fox Social, inicio"><img src="assets/images/logo.png" alt="" width="30" height="31"><span><b class="sf">Silk Fox</b> Social</span></a>
     <nav class="nav__links" aria-label="Principal">
       <a href="#portafolio">Portafolio</a>
+      <a href="#peliculas">Películas</a>
       <a href="#paquetes">Paquetes</a>
       <a href="#fecha">Agenda tu fecha</a>
       <a class="nav__back" data-transition="main" href="index.html"><i aria-hidden="true">✦</i><span class="sf">Silk Fox</span><em>Media</em></a>
@@ -58,6 +60,20 @@
 </section>
 <div class="strip" aria-hidden="true"><div class="strip__track"><span>Bodas</span><i>◆</i><span>Aniversarios</span><i>◆</i><span>Eventos sociales</span><i>◆</i><span>Retratos</span><i>◆</i><span>Bodas</span><i>◆</i><span>Aniversarios</span><i>◆</i><span>Eventos sociales</span><i>◆</i><span>Retratos</span><i>◆</i><span>Bodas</span><i>◆</i><span>Aniversarios</span><i>◆</i><span>Eventos sociales</span><i>◆</i><span>Retratos</span><i>◆</i><span>Bodas</span><i>◆</i><span>Aniversarios</span><i>◆</i><span>Eventos sociales</span><i>◆</i><span>Retratos</span><i>◆</i></div></div>
 
+<!-- PELÍCULA: highlight film en formato cine -->
+<section class="film" aria-label="Highlight film">
+  <a class="film__frame" href="assets/social/film.mp4" data-play data-video="assets/social/film.mp4" data-title="Highlight film · Silk Fox Social" data-media>
+    <span class="film__ph" aria-hidden="true"></span>
+    <video class="film__video" data-lazy muted loop playsinline preload="none" poster="assets/social/film-poster.jpg"><source data-src="assets/social/film-loop.mp4" type="video/mp4"></video>
+    <span class="film__ui">
+      <em>Highlight film</em>
+      <b>Así se siente una boda contada con calma</b>
+      <span class="film__btn"><span class="film__play" aria-hidden="true"></span>Ver la película</span>
+    </span>
+    <span class="media__todo">social/film-loop.mp4 · film.mp4 · film-poster.jpg</span>
+  </a>
+</section>
+
 <section class="sec" id="portafolio">
   <div class="wrap">
     <header class="sec__head rv">
@@ -70,19 +86,61 @@
       <button class="chip" data-filter="eventos" aria-pressed="false">Eventos Sociales</button>
       <button class="chip" data-filter="retratos" aria-pressed="false">Retratos</button>
     </div>
-    <!-- MOCK: reemplazar cada .ph por <img src="assets/social/NOMBRE.webp" alt="descripción" loading="lazy" width="" height=""> -->
+    <!-- Fotos: assets/social/gallery/01.jpg … 09.jpg (2000 px lado largo). Para añadir más, copia una <figure> y cambia el número. -->
     <div class="masonry" id="masonry">
-      <figure class="tile a-45" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-11" data-cat="eventos"><div class="ph"></div><figcaption>Eventos Sociales</figcaption></figure>
-      <figure class="tile a-34" data-cat="retratos"><div class="ph"></div><figcaption>Retratos</figcaption></figure>
-      <figure class="tile a-43" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-45" data-cat="eventos"><div class="ph"></div><figcaption>Eventos Sociales</figcaption></figure>
-      <figure class="tile a-11" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-34" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-43" data-cat="retratos"><div class="ph"></div><figcaption>Retratos</figcaption></figure>
-      <figure class="tile a-45" data-cat="eventos"><div class="ph"></div><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile a-45" data-cat="bodas"><a class="tile__a" href="assets/social/gallery/01.jpg" data-img data-title="Bodas" aria-label="Ampliar: Fotografía de boda"><div class="ph" data-media><img data-asset src="assets/social/gallery/01.jpg" alt="Fotografía de boda" loading="lazy"><span class="media__todo">social/gallery/01.jpg</span></div></a><figcaption>Bodas</figcaption></figure>
+      <figure class="tile a-11" data-cat="eventos"><a class="tile__a" href="assets/social/gallery/02.jpg" data-img data-title="Eventos Sociales" aria-label="Ampliar: Fotografía de evento social"><div class="ph" data-media><img data-asset src="assets/social/gallery/02.jpg" alt="Fotografía de evento social" loading="lazy"><span class="media__todo">social/gallery/02.jpg</span></div></a><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile a-34" data-cat="retratos"><a class="tile__a" href="assets/social/gallery/03.jpg" data-img data-title="Retratos" aria-label="Ampliar: Retrato"><div class="ph" data-media><img data-asset src="assets/social/gallery/03.jpg" alt="Retrato" loading="lazy"><span class="media__todo">social/gallery/03.jpg</span></div></a><figcaption>Retratos</figcaption></figure>
+      <figure class="tile a-43" data-cat="bodas"><a class="tile__a" href="assets/social/gallery/04.jpg" data-img data-title="Bodas" aria-label="Ampliar: Fotografía de boda"><div class="ph" data-media><img data-asset src="assets/social/gallery/04.jpg" alt="Fotografía de boda" loading="lazy"><span class="media__todo">social/gallery/04.jpg</span></div></a><figcaption>Bodas</figcaption></figure>
+      <figure class="tile a-45" data-cat="eventos"><a class="tile__a" href="assets/social/gallery/05.jpg" data-img data-title="Eventos Sociales" aria-label="Ampliar: Fotografía de evento social"><div class="ph" data-media><img data-asset src="assets/social/gallery/05.jpg" alt="Fotografía de evento social" loading="lazy"><span class="media__todo">social/gallery/05.jpg</span></div></a><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile a-11" data-cat="bodas"><a class="tile__a" href="assets/social/gallery/06.jpg" data-img data-title="Bodas" aria-label="Ampliar: Fotografía de boda"><div class="ph" data-media><img data-asset src="assets/social/gallery/06.jpg" alt="Fotografía de boda" loading="lazy"><span class="media__todo">social/gallery/06.jpg</span></div></a><figcaption>Bodas</figcaption></figure>
+      <figure class="tile a-34" data-cat="bodas"><a class="tile__a" href="assets/social/gallery/07.jpg" data-img data-title="Bodas" aria-label="Ampliar: Fotografía de boda"><div class="ph" data-media><img data-asset src="assets/social/gallery/07.jpg" alt="Fotografía de boda" loading="lazy"><span class="media__todo">social/gallery/07.jpg</span></div></a><figcaption>Bodas</figcaption></figure>
+      <figure class="tile a-43" data-cat="retratos"><a class="tile__a" href="assets/social/gallery/08.jpg" data-img data-title="Retratos" aria-label="Ampliar: Retrato"><div class="ph" data-media><img data-asset src="assets/social/gallery/08.jpg" alt="Retrato" loading="lazy"><span class="media__todo">social/gallery/08.jpg</span></div></a><figcaption>Retratos</figcaption></figure>
+      <figure class="tile a-45" data-cat="eventos"><a class="tile__a" href="assets/social/gallery/09.jpg" data-img data-title="Eventos Sociales" aria-label="Ampliar: Fotografía de evento social"><div class="ph" data-media><img data-asset src="assets/social/gallery/09.jpg" alt="Fotografía de evento social" loading="lazy"><span class="media__todo">social/gallery/09.jpg</span></div></a><figcaption>Eventos Sociales</figcaption></figure>
     </div>
-    <p class="note rv">Estamos reuniendo aquí el material real de cada celebración.</p>
+    
+  </div>
+</section>
+
+<section class="sec" id="peliculas">
+  <div class="wrap">
+    <header class="sec__head rv">
+      <h2 class="disp">Películas</h2>
+      <span class="rule" aria-hidden="true"><b></b></span>
+    </header>
+    <p class="lead rv">Cada celebración termina en un highlight film: unos minutos que vas a querer volver a ver en cada aniversario.</p>
+    <div class="films">
+      <a class="fcard rv" href="assets/social/films/01.mp4" data-play data-video="assets/social/films/01.mp4" data-title="Highlight film · Boda">
+        <span class="fcard__m" data-media>
+          <img data-asset src="assets/social/films/01.jpg" alt="Highlight film de boda" loading="lazy">
+          <video data-preview muted loop playsinline preload="none"><source data-src="assets/social/films/01-preview.mp4" type="video/mp4"></video>
+          <span class="fcard__play" aria-hidden="true"></span>
+          <span class="media__todo">social/films/01.jpg · 01-preview.mp4 · 01.mp4</span>
+        </span>
+        <span class="fcard__k">Boda</span>
+        <span class="fcard__t">Highlight film</span>
+      </a>
+      <a class="fcard rv" href="assets/social/films/02.mp4" data-play data-video="assets/social/films/02.mp4" data-title="Highlight film · Aniversario">
+        <span class="fcard__m" data-media>
+          <img data-asset src="assets/social/films/02.jpg" alt="Highlight film de aniversario" loading="lazy">
+          <video data-preview muted loop playsinline preload="none"><source data-src="assets/social/films/02-preview.mp4" type="video/mp4"></video>
+          <span class="fcard__play" aria-hidden="true"></span>
+          <span class="media__todo">social/films/02.jpg · 02-preview.mp4 · 02.mp4</span>
+        </span>
+        <span class="fcard__k">Aniversario</span>
+        <span class="fcard__t">Highlight film</span>
+      </a>
+      <a class="fcard rv" href="assets/social/films/03.mp4" data-play data-video="assets/social/films/03.mp4" data-title="Highlight film · Evento social">
+        <span class="fcard__m" data-media>
+          <img data-asset src="assets/social/films/03.jpg" alt="Highlight film de evento social" loading="lazy">
+          <video data-preview muted loop playsinline preload="none"><source data-src="assets/social/films/03-preview.mp4" type="video/mp4"></video>
+          <span class="fcard__play" aria-hidden="true"></span>
+          <span class="media__todo">social/films/03.jpg · 03-preview.mp4 · 03.mp4</span>
+        </span>
+        <span class="fcard__k">Evento social</span>
+        <span class="fcard__t">Highlight film</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -178,6 +236,7 @@
   </div>
 </footer>
 
+<script src="cine.js"></script>
 <script src="social.js"></script>
 <script src="transition.js"></script>
 </body>

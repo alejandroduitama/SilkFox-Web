@@ -229,3 +229,51 @@ body:not(.js) .hero__rule{width:96px}
 .pack.pack--dark{background:var(--ink);border-color:var(--gold);color:var(--pearl)}
 .pack.pack--dark .spec div{border-color:#2a2a2a}
 .pack.pack--dark .spec dd{color:var(--pearl)}
+
+/* ===== cine v4 ===== */
+/* película principal en formato 2.39:1 */
+.film{padding:72px 0 8px;background:var(--pearl)}
+.film__frame{position:relative;display:block;width:min(1160px,calc(100% - 44px));margin:0 auto;aspect-ratio:2.39/1;overflow:hidden;color:var(--pearl);text-decoration:none;
+  transform:scale(var(--fs,.92));transform-origin:center;will-change:transform}
+.film__frame::after{content:"";position:absolute;inset:12px;border:1px solid rgba(197,160,89,.75);pointer-events:none;z-index:3}
+.film__ph{position:absolute;inset:0;background:radial-gradient(60% 90% at 50% 120%,rgba(197,160,89,.5),transparent 70%),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px),linear-gradient(160deg,#2b251b,#0f0d0a)}
+.film__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s}
+.film__frame.has-video .film__video{opacity:1}
+.film__frame.has-video .film__ph{opacity:0}
+.film__ui{position:absolute;inset:0;z-index:2;display:grid;place-content:center;justify-items:center;gap:14px;padding:24px;text-align:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.25),transparent 70%)}
+.film__ui em{font-style:normal;font-size:11px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.film__ui b{font-weight:300;font-size:clamp(20px,3vw,40px);line-height:1.2;max-width:24ch}
+.film__btn{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;margin-top:6px}
+.film__play,.fcard__play{position:relative;display:inline-block;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);transition:background .4s var(--ease),transform .5s var(--ease)}
+.film__play::after,.fcard__play::after{content:"";position:absolute;left:50%;top:50%;margin:-7px 0 0 -4px;border-left:12px solid var(--gold);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.film__frame:hover .film__play{background:var(--gold);transform:scale(1.08)}
+.film__frame:hover .film__play::after{border-left-color:var(--ink)}
+@media (max-width:767px){.film__frame{aspect-ratio:16/10}}
+
+/* galería: enlaces, fotos y zoom lento */
+.tile__a{display:block;color:inherit}
+.ph{position:relative;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform 14s linear}
+.tile.in .ph img{transform:scale(1.08)}
+.ph.has-img+figcaption,.tile:has(.has-img) figcaption{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5);z-index:2}
+.tile figcaption{z-index:2;pointer-events:none}
+
+/* películas */
+.films{display:grid;gap:18px}
+.fcard{display:block;color:var(--ink);text-decoration:none}
+.fcard__m{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:linear-gradient(160deg,#2b251b,#0f0d0a)}
+.fcard__m::after{content:"";position:absolute;inset:8px;border:1px solid rgba(197,160,89,.6);pointer-events:none;z-index:3}
+.fcard__m img,.fcard__m video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .6s}
+.fcard__m video{opacity:0}.fcard__m.has-video video{opacity:1}
+.fcard:hover .fcard__m img,.fcard:hover .fcard__m video{transform:scale(1.04)}
+.fcard__play{position:absolute;left:50%;top:50%;margin:-23px 0 0 -23px;z-index:2;background:rgba(10,10,10,.35);backdrop-filter:blur(4px)}
+.fcard:hover .fcard__play{background:var(--gold);transform:scale(1.1)}
+.fcard:hover .fcard__play::after{border-left-color:var(--ink)}
+.fcard__k{display:block;margin-top:14px;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#8a6f2f}
+.fcard__t{display:block;font-size:18px;font-weight:400;margin-top:2px}
+@media (min-width:768px){.films{grid-template-columns:repeat(3,1fr)}}
+#peliculas{padding-bottom:40px}
+
+/* visor con acento dorado */
+.lbx__cap{color:#c5a059}
+@media (prefers-reduced-motion:reduce){.film__frame{transform:none}.ph img{transition:none}.tile.in .ph img{transform:none}}
