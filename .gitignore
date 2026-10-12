@@ -1,0 +1,12 @@
+# sistema y editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# dependencias y temporales
+node_modules/
+*.log
+*.tmp
+*.profile/

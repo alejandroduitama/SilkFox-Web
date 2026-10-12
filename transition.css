@@ -1,0 +1,26 @@
+/* Transición entre Silk Fox Media (oscuro/naranja) y Silk Fox Social (perla/dorado) */
+html[data-pt="social"]{--ptbg:#FAFAFA}
+html[data-pt="main"]{--ptbg:#0A0A0A}
+/* cubre la página nueva hasta que el script toma el relevo (evita el parpadeo) */
+html[data-pt]::after{content:"";position:fixed;inset:0;z-index:9999;background:var(--ptbg)}
+
+.pt{position:fixed;inset:0;z-index:10000;background:var(--pt-bg);color:var(--pt-fg);display:grid;place-items:center;pointer-events:all;
+  transform:translateY(100%);transition:transform .9s cubic-bezier(.76,0,.24,1)}
+.pt::before,.pt::after{content:"";position:absolute;left:-10%;right:-10%;height:16vh;background:var(--pt-bg)}
+.pt::before{bottom:calc(100% - 1px);border-radius:50% 50% 0 0/100% 100% 0 0}
+.pt::after{top:calc(100% - 1px);border-radius:0 0 50% 50%/0 0 100% 100%}
+.pt.is-in{transform:translateY(0)}
+.pt.is-out{transform:translateY(-100%)}
+.pt.is-now{transition:none;transform:translateY(0)}
+.pt__box{display:grid;justify-items:center;gap:18px;text-align:center;opacity:0;transform:translateY(14px);transition:opacity .5s ease .45s,transform .7s cubic-bezier(.2,0,0,1) .45s}
+.pt.is-in .pt__box,.pt.is-now .pt__box{opacity:1;transform:none}
+.pt.is-out .pt__box{opacity:0;transform:translateY(-14px);transition-delay:0s;transition-duration:.35s}
+.pt__label{line-height:1;white-space:nowrap}
+.pt__label{display:grid;justify-items:center;gap:12px}
+.pt__label .sf{font-family:'Retrofunk Script',cursive;font-weight:400;font-size:clamp(70px,13vw,170px);line-height:.95}
+.pt__label .pt__s{font-family:'Montserrat',sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:.7em;padding-left:.7em;font-size:clamp(16px,2.6vw,32px)}
+.pt--main .pt__s{font-weight:600;color:var(--pt-accent);letter-spacing:.5em;padding-left:.5em}
+.pt__line{display:block;height:1.5px;width:0;background:var(--pt-accent);transition:width .8s cubic-bezier(.2,0,0,1) .6s}
+.pt.is-in .pt__line,.pt.is-now .pt__line{width:min(220px,40vw)}
+.pt.is-out .pt__line{transition-delay:0s}
+@media (prefers-reduced-motion:reduce){.pt,.pt__box,.pt__line{transition:none!important}}
