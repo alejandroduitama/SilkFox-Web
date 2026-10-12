@@ -33,29 +33,6 @@
     });
   });
 
-
-  // Película: se acerca a tamaño completo al entrar en pantalla
-  var film = document.querySelector('.film__frame');
-  if (film && !reduce) {
-    var fTick = false;
-    var fUpd = function () {
-      var r = film.getBoundingClientRect(), vh = innerHeight;
-      var p = Math.max(0, Math.min(1, (vh - r.top) / (vh * .9)));
-      film.style.setProperty('--fs', (0.92 + 0.08 * p).toFixed(4));
-      fTick = false;
-    };
-    addEventListener('scroll', function () { if (!fTick) { fTick = true; requestAnimationFrame(fUpd); } }, { passive: true });
-    fUpd();
-  }
-
-  // Galería: zoom lento (Ken Burns) cuando la foto entra en pantalla
-  if ('IntersectionObserver' in window) {
-    var kio = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); kio.unobserve(e.target); } });
-    }, { threshold: .25 });
-    tiles.forEach(function (t) { kio.observe(t); });
-  }
-
   // Elegir paquete: rellena el campo oculto antes de bajar al formulario
   var form = document.getElementById('date');
   document.querySelectorAll('[data-pack]').forEach(function (a) {
