@@ -247,11 +247,11 @@
 <!-- 2. HERO -->
 <section class="hero" id="top">
   <div class="hero__stage">
-    <div class="reel" aria-hidden="true">
-      <span class="reel__tag">SF.00 · 9:16</span>
-      <img class="reel__fox" src="assets/images/logo.png" alt="" width="399" height="418">
-      <span class="rec"><b></b>REC</span>
-      <span class="tc" id="tc">00:00:00:00</span>
+    <div class="reel">
+      <video class="reel__video" muted loop playsinline autoplay preload="metadata" poster="assets/media/showreel/showreel-16x9-poster.jpg" aria-hidden="true">
+        <source src="assets/media/showreel/showreel-16x9-loop.mp4" type="video/mp4">
+      </video>
+      <button class="reel__play" type="button" data-showreel-open><svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l12-7.5z"/></svg>Ver showreel completo</button>
     </div>
     <div class="wrap hero__in">
       <h1 class="hero__title">No hacemos videos.<br><span class="accent">Creamos impacto.</span></h1>
@@ -408,6 +408,13 @@
 
 <a class="fab" data-wa href="#contacto" aria-label="Agenda tu briefing gratuito por WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><span>Agenda tu briefing</span></a>
 <p class="side" aria-hidden="true">Silk Fox Media · Productora audiovisual · Bogotá</p>
+<dialog class="sr" id="showreel" aria-label="Showreel Silk Fox Media">
+  <button class="sr__x" type="button" aria-label="Cerrar" data-showreel-close>×</button>
+  <video class="sr__video" controls playsinline preload="none" poster="assets/media/showreel/showreel-16x9-poster.jpg">
+    <source src="assets/media/showreel/showreel-16x9.mp4" type="video/mp4">
+  </video>
+</dialog>
+
 <script src="main.js"></script>
 <script src="motion.js"></script>
 <script src="transition.js"></script>

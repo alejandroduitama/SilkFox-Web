@@ -81,13 +81,11 @@
     });
   }
 
-  // Scroll: progreso + parallax suave del zorro
-  var fox = document.querySelector('.reel');
+  // Scroll: barra de progreso
   var ticking = false;
   function onScroll() {
     var max = document.documentElement.scrollHeight - innerHeight;
     bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(scrollY / max, 1) : 0) + ')';
-    if (fox && !reduce && scrollY < innerHeight * 1.2) fox.style.transform = 'translateY(' + (scrollY * 0.16) + 'px)';
     ticking = false;
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });

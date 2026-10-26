@@ -64,25 +64,54 @@
       <h2 class="disp">Portafolio</h2>
       <span class="rule" aria-hidden="true"><b></b></span>
     </header>
-    <div class="chips rv" role="group" aria-label="Filtrar portafolio">
-      <button class="chip is-on" data-filter="all" aria-pressed="true">Todo</button>
-      <button class="chip" data-filter="bodas" aria-pressed="false">Bodas</button>
-      <button class="chip" data-filter="eventos" aria-pressed="false">Eventos Sociales</button>
-      <button class="chip" data-filter="retratos" aria-pressed="false">Retratos</button>
+    <!-- Cada pieza: FOTO  data-type="foto" data-full="(2000 px)" + <img> miniatura de 900 px.
+         VIDEO data-type="video" data-video="(mp4 local, < 25 MB)" o data-embed="https://www.youtube-nocookie.com/embed/ID",
+               + <img> póster 4:5; data-preview opcional (3-5 s, sin audio) para el movimiento al pasar el cursor. -->
+    <div class="filters rv">
+      <div class="chips" role="group" aria-label="Filtrar por tipo de celebración">
+        <button class="chip is-on" data-filter="all" aria-pressed="true">Todo</button>
+        <button class="chip" data-filter="bodas" aria-pressed="false">Bodas</button>
+        <button class="chip" data-filter="eventos" aria-pressed="false">Eventos Sociales</button>
+        <!-- <button class="chip" data-filter="retratos" aria-pressed="false">Retratos</button>  se activa cuando haya sesiones de retrato -->
+      </div>
+      <div class="kinds" role="group" aria-label="Filtrar por formato">
+        <button class="kind is-on" data-kind="all" aria-pressed="true">Todo</button>
+        <button class="kind" data-kind="foto" aria-pressed="false">Fotos</button>
+        <button class="kind" data-kind="video" aria-pressed="false">Video</button>
+      </div>
     </div>
-    <!-- MOCK: reemplazar cada .ph por <img src="assets/social/NOMBRE.webp" alt="descripción" loading="lazy" width="" height=""> -->
     <div class="masonry" id="masonry">
-      <figure class="tile a-45" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-11" data-cat="eventos"><div class="ph"></div><figcaption>Eventos Sociales</figcaption></figure>
-      <figure class="tile a-34" data-cat="retratos"><div class="ph"></div><figcaption>Retratos</figcaption></figure>
-      <figure class="tile a-43" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-45" data-cat="eventos"><div class="ph"></div><figcaption>Eventos Sociales</figcaption></figure>
-      <figure class="tile a-11" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-34" data-cat="bodas"><div class="ph"></div><figcaption>Bodas</figcaption></figure>
-      <figure class="tile a-43" data-cat="retratos"><div class="ph"></div><figcaption>Retratos</figcaption></figure>
-      <figure class="tile a-45" data-cat="eventos"><div class="ph"></div><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-01.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-01-thumb.jpg" alt="Novios de pie durante la ceremonia, ella con un ramo blanco" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-01.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-01-thumb.jpg" alt="Quinceañera con vestido verde sentada en el jardín" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="video" data-video="assets/social/portafolio/bodas-15-video.mp4" data-preview="assets/social/portafolio/bodas-15-preview.mp4" data-title="Highlight de boda"><button class="tile__btn" type="button" aria-label="Reproducir video, Highlight de boda"><img src="assets/social/portafolio/bodas-15-poster.jpg" alt="" loading="lazy" decoding="async" width="1080" height="1350"><span class="play" aria-hidden="true"></span></button><figcaption>Bodas · Video</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-04.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-04-thumb.jpg" alt="Novios abrazados frente a un seto en el jardín" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-04.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-04-thumb.jpg" alt="Primer plano de la quinceañera con corona" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-05.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-05-thumb.jpg" alt="Beso de los novios bajo una pérgola, en blanco y negro" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-02.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-02-thumb.jpg" alt="Quinceañera junto a un ventanal en arco" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-09.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-09-thumb.jpg" alt="Anillos sobre una rosa rosada" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="video" data-video="assets/social/portafolio/eventos-11-video.mp4" data-preview="assets/social/portafolio/eventos-11-preview.mp4" data-title="Fragmento del highlight de unos 15 años"><button class="tile__btn" type="button" aria-label="Reproducir video, Fragmento del highlight de unos 15 años"><img src="assets/social/portafolio/eventos-11-poster.jpg" alt="" loading="lazy" decoding="async" width="1080" height="1350"><span class="play" aria-hidden="true"></span></button><figcaption>Eventos Sociales · Video</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-02.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-02-thumb.jpg" alt="Novios abrazados con un ramo de flores lilas" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-07.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-07-thumb.jpg" alt="Quinceañera soplando las velas" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-14.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-14-thumb.jpg" alt="Intercambio de anillos" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-03.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-03-thumb.jpg" alt="Novios frente a frente a contraluz, él con sombrero" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-05.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-05-thumb.jpg" alt="Quinceañera bailando en la pista con luces de colores" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="video" data-video="assets/social/portafolio/bodas-16-video.mp4" data-preview="assets/social/portafolio/bodas-16-preview.mp4" data-title="Reel de boda"><button class="tile__btn" type="button" aria-label="Reproducir video, Reel de boda"><img src="assets/social/portafolio/bodas-16-poster.jpg" alt="" loading="lazy" decoding="async" width="1080" height="1350"><span class="play" aria-hidden="true"></span></button><figcaption>Bodas · Video</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-08.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-08-thumb.jpg" alt="Detalle de la torta de bodas con flores" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-03.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-03-thumb.jpg" alt="Perfil de la quinceañera a contraluz" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-13.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-13-thumb.jpg" alt="Beso de los novios con un ramo de rosas rojas" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-08.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-08-thumb.jpg" alt="Quinceañera recostada sobre su vestido verde" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-10.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-10-thumb.jpg" alt="Novios sonriendo juntos en el jardín" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="video" data-video="assets/social/portafolio/bodas-17-video.mp4" data-preview="assets/social/portafolio/bodas-17-preview.mp4" data-title="Fragmento del highlight de una boda"><button class="tile__btn" type="button" aria-label="Reproducir video, Fragmento del highlight de una boda"><img src="assets/social/portafolio/bodas-17-poster.jpg" alt="" loading="lazy" decoding="async" width="1080" height="1350"><span class="play" aria-hidden="true"></span></button><figcaption>Bodas · Video</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-09.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-09-thumb.jpg" alt="Manos encendiendo las velas" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-06.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-06-thumb.jpg" alt="Manos de los novios entrelazadas" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-06.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-06-thumb.jpg" alt="Quinceañera bajo una guirnalda de luces de noche" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-11.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-11-thumb.jpg" alt="Retrato de la novia con velo y ramo, en blanco y negro" loading="lazy" decoding="async" width="900" height="1592"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="video" data-video="assets/social/portafolio/eventos-12-video.mp4" data-preview="assets/social/portafolio/eventos-12-preview.mp4" data-title="Fragmento del highlight de unos 15 años"><button class="tile__btn" type="button" aria-label="Reproducir video, Fragmento del highlight de unos 15 años"><img src="assets/social/portafolio/eventos-12-poster.jpg" alt="" loading="lazy" decoding="async" width="1080" height="1350"><span class="play" aria-hidden="true"></span></button><figcaption>Eventos Sociales · Video</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-12.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-12-thumb.jpg" alt="Bicicleta decorada con flores en el jardín" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
+      <figure class="tile" data-cat="eventos" data-type="foto" data-full="assets/social/portafolio/eventos-10.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Eventos Sociales"><img src="assets/social/portafolio/eventos-10-thumb.jpg" alt="Mesa de postres con torta y cupcakes" loading="lazy" decoding="async" width="900" height="600"></button><figcaption>Eventos Sociales</figcaption></figure>
+      <figure class="tile" data-cat="bodas" data-type="foto" data-full="assets/social/portafolio/bodas-07.jpg"><button class="tile__btn" type="button" aria-label="Ver foto, Bodas"><img src="assets/social/portafolio/bodas-07-thumb.jpg" alt="Manos de los novios con los anillos sobre un ramo de rosas rojas" loading="lazy" decoding="async" width="900" height="1350"></button><figcaption>Bodas</figcaption></figure>
     </div>
-    <p class="note rv">Estamos reuniendo aquí el material real de cada celebración.</p>
+    <p class="empty note" id="empty" hidden>No hay piezas con esa combinación todavía.</p>
   </div>
 </section>
 
@@ -177,6 +206,15 @@
     <p class="note">© <span id="yr">2026</span> Silk Fox Social, una línea de Silk Fox Media · Bogotá, Colombia. Todos los precios en COP, IVA no incluido.</p>
   </div>
 </footer>
+
+
+<dialog class="lb" id="lb" aria-label="Visor del portafolio">
+  <button class="lb__x" type="button" aria-label="Cerrar" data-lb="close">×</button>
+  <button class="lb__nav lb__prev" type="button" aria-label="Anterior" data-lb="prev">‹</button>
+  <div class="lb__stage" id="lbStage"></div>
+  <button class="lb__nav lb__next" type="button" aria-label="Siguiente" data-lb="next">›</button>
+  <p class="lb__cap" id="lbCap"></p>
+</dialog>
 
 <script src="social.js"></script>
 <script src="transition.js"></script>

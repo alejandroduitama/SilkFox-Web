@@ -10,3 +10,6 @@ node_modules/
 *.log
 *.tmp
 *.profile/
+
+# material crudo de la recopilación (vive en la carpeta compartida, no en el repo)
+assets/media/portafolio/

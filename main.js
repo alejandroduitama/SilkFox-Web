@@ -69,7 +69,11 @@
         io.unobserve(en.target);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    els.forEach(function (el) { io.observe(el); });
+    els.forEach(function (el, i) {
+      // El hero siempre aparece al cargar, aunque sus botones queden en el borde de pantallas bajas
+      if (el.closest('.hero')) { el.style.setProperty('--d', Math.min(i, 5) * 100 + 'ms'); el.classList.add('in'); }
+      else io.observe(el);
+    });
   } else {
     els.forEach(function (el) { el.classList.add('in'); });
   }
@@ -84,6 +88,24 @@
       tc.textContent = '00:' + p(Math.floor(s / 60) % 60) + ':' + p(s % 60) + ':' + p(f);
       setTimeout(tick, 1000 / 12);
     })();
+  }
+
+  // Showreel: bucle del hero (sin sonido) y visor con el showreel completo
+  var loopVideo = document.querySelector('.reel__video');
+  if (loopVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    loopVideo.removeAttribute('autoplay');
+  }
+  var sr = document.getElementById('showreel');
+  var srOpen = document.querySelector('[data-showreel-open]');
+  if (sr && srOpen) {
+    var srVideo = sr.querySelector('video');
+    srOpen.addEventListener('click', function () {
+      if (typeof sr.showModal === 'function') sr.showModal(); else sr.setAttribute('open', '');
+      srVideo.play().catch(function () {});
+    });
+    sr.querySelector('[data-showreel-close]').addEventListener('click', function () { sr.close(); });
+    sr.addEventListener('click', function (e) { if (e.target === sr) sr.close(); });
+    sr.addEventListener('close', function () { srVideo.pause(); srOpen.focus(); });
   }
 
   var yr = document.getElementById('yr');
